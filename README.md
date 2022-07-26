@@ -6,7 +6,14 @@ In all cases your request will be routed to the right team/individual who can be
 
 ## Questions? Discussions?
 
-If you have any `how-to` questions, fun anecdotes, etc, please share them in the [`Discussions`](https://github.com/KittyCAD/support/discussions) tab or ask in our [community discord](https://discord.gg/JQEpHR7Nt2).
+If you have any `how-to` questions, fun anecdotes, etc, please share them in the [`Discussions`](https://github.com/KittyCAD/support/discussions) tab.
+
+OR
+
+Feel free to share anything in our [community discord](https://discord.gg/JQEpHR7Nt2). [![Discord chat][discord-badge]][discord-url]
+
+[discord-badge]: https://img.shields.io/discord/915388055236509727?logo=discord
+[discord-url]: https://discord.gg/U4QcDcwf
 
 ## Bug // Feature Request
 
