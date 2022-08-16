@@ -5,8 +5,8 @@ on:
   #issues:
   #types: [opened]
 
-env:
-  NUMBER: ${{ github.event.number }}
+    #env:
+    #NUMBER: ${{ github.event.number }}
 
 jobs:
   Notify:
