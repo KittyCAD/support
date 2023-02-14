@@ -3,7 +3,7 @@ name: Feature request
 about: Suggest an idea for this project
 title: ''
 labels: Feature request
-assignees: hanbollar, jessfraz, irev-dev, brwhale
+assignees: hanbollar
 ---
 
 **Is your feature request related to a problem? Please describe.**
