@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve
 title: ''
 labels: bug
-assignees: hanbollar, jessfraz, irev-dev, brwhale
+assignees: hanbollar
 ---
 
 **Describe the bug**
