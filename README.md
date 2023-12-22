@@ -21,4 +21,4 @@ Found a bug or have a potential feature request, feel free to open an [`Issue`](
 
 ## Private Support
 
-Have a question you want to ask but more in a private space (it's proprietary, etc) ? Contact us at support@kittycad.io.
+Have a question you want to ask but more in a private space (it's proprietary, etc) ? Contact us at support@zoo.dev.
