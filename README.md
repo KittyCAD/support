@@ -1,4 +1,4 @@
-# Support :cat:
+# Support 
 
 A public-facing place for individuals to note bugs, ask questions, and make feature requests.
 
