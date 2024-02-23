@@ -10,10 +10,7 @@ If you have any `how-to` questions, fun anecdotes, etc, please share them in the
 
 OR
 
-Feel free to share anything in our [community discord](https://discord.gg/S9yW9rjGhF). [![Discord chat][discord-badge]][discord-url]
-
-[discord-badge]: https://img.shields.io/discord/915388055236509727?logo=discord
-[discord-url]: https://discord.gg/U4QcDcwf
+Feel free to share anything in our [community discord](https://discord.gg/S9yW9rjGhF).
 
 ## Bugs
 
