@@ -6,7 +6,7 @@ In all cases your request will be routed to the right team/individual who can be
 
 ## Questions? Discussions?
 
-If you have any `how-to` questions, fun anecdotes, etc, please share them in the `Forum` [COMING SOON].
+If you have any how-to questions, fun anecdotes, etc, please share them in the `Forum` [COMING SOON].
 
 OR
 
