@@ -15,9 +15,9 @@ Feel free to share anything in our [community discord](https://discord.gg/S9yW9r
 [discord-badge]: https://img.shields.io/discord/915388055236509727?logo=discord
 [discord-url]: https://discord.gg/U4QcDcwf
 
-## Bug // Feature Request
+## Bugs
 
-Found a bug, feel free to open an [`Issue`](https://github.com/KittyCAD/support/issues) ticket :thumbsup:
+Found a bug, feel free to open an [`issue`](https://github.com/KittyCAD/support/issues).
 
 ## Security issues
 
