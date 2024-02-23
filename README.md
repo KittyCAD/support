@@ -1,6 +1,6 @@
 # Support 
 
-A public-facing place for individuals to note bugs, ask questions, and make feature requests.
+A public-facing place for individuals to note bugs.
 
 In all cases your request will be routed to the right team/individual who can best assist.
 
@@ -17,7 +17,7 @@ Feel free to share anything in our [community discord](https://discord.gg/S9yW9r
 
 ## Bug // Feature Request
 
-Found a bug or have a potential feature request, feel free to open an [`Issue`](https://github.com/KittyCAD/support/issues) ticket :thumbsup:
+Found a bug, feel free to open an [`Issue`](https://github.com/KittyCAD/support/issues) ticket :thumbsup:
 
 ## Security issues
 
