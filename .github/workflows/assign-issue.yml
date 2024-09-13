@@ -5,6 +5,9 @@ on:
     types: [opened]
   workflow_dispatch:
 
+permissions:
+  issues: write  # Required to assign users to the issue
+
 jobs:
   auto-assign-team:
     runs-on: ubuntu-latest
