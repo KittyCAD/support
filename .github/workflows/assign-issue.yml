@@ -17,6 +17,8 @@ jobs:
         run: |
           users=("jgomez720" "PapalapticAfterblast")
           ISSUE_NUMBER=${{ github.event.inputs.issue_number }}  # Get issue number from the input
+          echo "Repository: ${{ github.repository }}"
+          echo "Issue Number: ${{ github.event.inputs.issue_number }}"
 
           # Create a properly formatted JSON string for the assignees array
           assignees_json=$(printf '%s\n' "${users[@]}" | jq -R . | jq -s .)
