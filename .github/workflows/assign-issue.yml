@@ -8,9 +8,11 @@ on:
 jobs:
   auto-assign-team:
     runs-on: ubuntu-latest
-    
 
     steps:
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
       - name: Get team members using GitHub API
         id: team-members
         run: |
