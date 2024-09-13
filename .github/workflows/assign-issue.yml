@@ -25,12 +25,3 @@ jobs:
           echo "API Response:"
           echo "$response"  # Just print the response for now
 
-      - name: Assign team members to the issue
-        run: |
-          while IFS= read -r member; do
-            curl -s -X POST \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Content-Type: application/json" \
-              -d "{\"assignees\": [\"$member\"]}" \
-              "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
-          done < team_members.txt
