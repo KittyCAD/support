@@ -1,12 +1,9 @@
-name: Auto Assign Specified Users to Issues
+name: Auto Assign Users
 
 on:
   issues:
     types: [opened]
   workflow_dispatch:
-
-permissions:
-  issues: write  # Ensure the action has write access to issues
 
 jobs:
   auto-assign-team:
@@ -15,19 +12,19 @@ jobs:
     steps:
       - name: Assign specified users to the issue
         run: |
-          users=("jgomez720" "PapalapticAfterblast")  # List your GitHub usernames here
+          users=("jgomez720" "PapalapticAfterblast")
+          ISSUE_NUMBER=30  # Get issue number from the input
           
-          for user in "${users[@]}"; do
-            echo "Assigning $user to issue #${{ github.event.issue.number }}..."
-            response=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Content-Type: application/json" \
-              -d "{\"assignees\": [\"$user\"]}" \
-              "https://api.github.com/repos/${{ github.repository }}/issues/30")
+          # Assign users to the issue using the correct endpoint
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"assignees\": [$(for user in "${users[@]}"; do echo "\"$user\","; done | sed 's/,$//')]}" \
+            "https://api.github.com/repos/${{ github.repository }}/issues/$ISSUE_NUMBER/assignees")
 
-            if [ "$response" -eq 201 ]; then
-              echo "Successfully assigned $user to issue #30."
-            else
-              echo "Error: Failed to assign $user. HTTP response code: $response"
-            fi
+          if [ "$response" -eq 201 ]; then
+            echo "Successfully assigned users to issue #$ISSUE_NUMBER."
+          else
+            echo "Error: Failed to assign users. HTTP response code: $response"
+          fi
           done
