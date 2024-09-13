@@ -27,4 +27,3 @@ jobs:
           else
             echo "Error: Failed to assign users. HTTP response code: $response"
           fi
-          done
