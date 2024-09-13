@@ -1,9 +1,12 @@
-name: Auto Assign Users
+name: Auto Assign Specified Users to Issues
 
 on:
   issues:
     types: [opened]
   workflow_dispatch:
+
+permissions:
+  issues: write  # Ensure the action has write access to issues
 
 jobs:
   auto-assign-team:
@@ -12,23 +15,19 @@ jobs:
     steps:
       - name: Assign specified users to the issue
         run: |
-          users=("jgomez720" "PapalapticAfterblast")
+          users=("jgomez720" "PapalapticAfterblast")  # List your GitHub usernames here
           
           for user in "${users[@]}"; do
             echo "Assigning $user to issue #${{ github.event.issue.number }}..."
-            
-            # Make the API request and capture the HTTP status code
-            http_response=$(curl -s -o response.json -w "%{http_code}" -X POST \
+            response=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
               -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               -H "Content-Type: application/json" \
               -d "{\"assignees\": [\"$user\"]}" \
               "https://api.github.com/repos/${{ github.repository }}/issues/30")
 
-            # Check if the request was successful
-            if [ "$http_response" -eq 201 ]; then
-              echo "Successfully assigned $user."
+            if [ "$response" -eq 201 ]; then
+              echo "Successfully assigned $user to issue #30."
             else
-              echo "Error: Failed to assign $user. HTTP response code: $http_response"
-              cat response.json
+              echo "Error: Failed to assign $user. HTTP response code: $response"
             fi
           done
