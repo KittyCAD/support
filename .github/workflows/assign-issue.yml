@@ -23,10 +23,7 @@ jobs:
             https://api.github.com/orgs/KittyCAD/teams/support/members)
 
           echo "API Response:"
-          echo "$response" | jq '.'  # Debug to see the structure
-
-          # Extract the member logins
-          echo "$response" | jq -r '.[].login' > team_members.txt
+          echo "$response"  # Just print the response for now
 
       - name: Assign team members to the issue
         run: |
