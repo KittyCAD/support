@@ -1,0 +1,27 @@
+name: Auto Assign Team to Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto-assign-team:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get team members
+        id: team-members
+        run: |
+          response=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/orgs/KittyCAD/teams/support/members")
+          echo "$response" | jq -r '.[].login' > team_members.txt
+
+      - name: Assign team members to the issue
+        run: |
+          while IFS= read -r member; do
+            curl -s -X POST \
+              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Content-Type: application/json" \
+              -d "{\"assignees\": [\"$member\"]}" \
+              "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+          done < team_members.txt
